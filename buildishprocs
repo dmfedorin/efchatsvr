@@ -1,0 +1,19 @@
+@build
+{
+        $("gcc -o build/main src/*.c src/*/*.c");
+
+        !("finished building");
+}
+
+@run
+{
+        $("./build/main");
+
+        !("finished running");
+}
+
+@main
+{
+        >(build,
+          run);
+}
